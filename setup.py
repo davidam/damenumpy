@@ -47,6 +47,7 @@ setup(name='damenumpy',
       package_dir={'damenumpy': 'damenumpy', 'damegender.tests': 'damenumpy/tests'},
       install_requires=[
           'markdown',
+          'numpy',
       ],
       test_suite='nose.collector',
       tests_require=['nose', 'nose-cover3'],
