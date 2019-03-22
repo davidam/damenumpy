@@ -1,0 +1,18 @@
+
+Learning Numpy from Tests by David Arroyo Menéndez
+
+* Check Test
++ Execute all tests:
+#+BEGIN_SRC
+$ nosetests3 damenumpy/tests
+#+END_SRC
+
++ Execute one file:
+#+BEGIN_SRC
+$ nosetests3 damenumpy/tests/test_basics.py
+#+END_SRC
+
++ Execute one test:
+#+BEGIN_SRC
+$ nosetests3 damenumpy/tests/test_basics.py:TestBasics.test_indexing
+#+END_SRC
