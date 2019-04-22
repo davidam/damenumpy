@@ -30,6 +30,8 @@ class TestMaths(TestCase):
         x2 = np.array([4, 6])
         x3 = np.array([4, 6])
         self.assertEqual(np.sum(x), 10)
+        xres = x2 + x3
+        self.assertTrue(np.array_equal(xres, [8, 12]))
 
     def test_max(self):
         self.assertEqual(np.max([1, 2, 3, 4]), 4)
