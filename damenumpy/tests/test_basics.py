@@ -79,6 +79,11 @@ class TestBasics(TestCase):
         self.assertEqual(bool_idx[1, 0], True)
         self.assertEqual(bool_idx[1, 1], True)
 
+    def test_tile(self):
+        v = np.array([1, 0, 1])
+        vv = np.tile(v, (4, 1))  # Stack 4 copies of v on top of each other
+        self.assertTrue(np.array_equal(vv, np.array([[1, 0, 1], [1, 0, 1], [1, 0, 1], [1, 0, 1]])))
+
     def test_empty_like(self):
         x = np.array([[1,2,3], [4,5,6], [7,8,9], [10, 11, 12]])
         v = np.array([1, 0, 1])
@@ -87,3 +92,7 @@ class TestBasics(TestCase):
         for i in range(4):
             y[i, :] = x[i, :] + v
         self.assertTrue(np.array_equal(np.array([[2, 2, 4], [5, 5, 7], [8, 8, 10], [11, 11, 13]]), y))
+
+    def test_transpose(self):
+        a = np.array([[1, 2], [3, 4]])
+        self.assertTrue(np.array_equal(np.array([[1, 3], [2, 4]]), a.transpose()))
