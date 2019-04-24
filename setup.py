@@ -28,7 +28,7 @@ from setuptools import setup
 #         return f.read()
 
 setup(name='damenumpy',
-      version='0.0.3',
+      version='0.0.4',
       description='Learning Numpy from Tests by David Arroyo Menéndez',
 #      long_description=readme(),
       classifiers=[
@@ -44,7 +44,7 @@ setup(name='damenumpy',
       author_email='davidam@gnu.org',
       license='GPLv3',
       packages=['damenumpy', 'damenumpy.tests'],
-      package_dir={'damenumpy': 'damenumpy', 'damegender.tests': 'damenumpy/tests'},
+      package_dir={'damenumpy': 'damenumpy', 'damenumpy.tests': 'damenumpy/tests'},
       install_requires=[
           'markdown',
           'numpy',
