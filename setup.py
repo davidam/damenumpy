@@ -28,7 +28,7 @@ from setuptools import setup
 #         return f.read()
 
 setup(name='damenumpy',
-      version='0.0.4',
+      version='0.0.5',
       description='Learning Numpy from Tests by David Arroyo Menéndez',
 #      long_description=readme(),
       classifiers=[
@@ -38,7 +38,7 @@ setup(name='damenumpy',
         'Topic :: Scientific/Engineering',
       ],
       keywords='numpy tests',
-#      scripts=['bin/funniest-joke'],
+      scripts=['bin/damenumpy-sum.py'],
       url='http://github.com/davidam/damenumpy',
       author='David Arroyo Menéndez',
       author_email='davidam@gnu.org',
