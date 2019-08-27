@@ -22,5 +22,9 @@
 # Boston, MA 02110-1301 USA,
 
 import numpy as np
-x = np.array([[1,2],[3,4]])
-print(np.sum(x))
+
+def main():
+    x = np.array([[1,2],[3,4]])
+    return np.sum(x)
+
+print(main())
