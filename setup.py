@@ -28,7 +28,7 @@ from setuptools import setup
 #         return f.read()
 
 setup(name='damenumpy',
-      version='0.0.5',
+      version='0.0.7',
       description='Learning Numpy from Tests by David Arroyo Menéndez',
 #      long_description=readme(),
       classifiers=[
@@ -44,15 +44,15 @@ setup(name='damenumpy',
       author_email='davidam@gnu.org',
       license='GPLv3',
       packages=['damenumpy', 'damenumpy.tests'],
-      package_dir={'damenumpy': 'damenumpy', 'damenumpy.tests': 'damenumpy/tests'},
+      package_dir={'damenumpy': 'damenumpy', 'damenumpy.tests': 'damenumpy/tests', 'damenumpy.bin': 'damenumpy/bin'},
       install_requires=[
           'markdown',
           'numpy',
       ],
       test_suite='nose.collector',
       tests_require=['nose', 'nose-cover3'],
-      # entry_points={
-      #     'console_scripts': ['funniest-joke=funniest.command_line:main'],
-      # },
+      entry_points={
+          'console_scripts': ['damenumpy=damenumpy'],
+      },
       include_package_data=True,
       zip_safe=False)
