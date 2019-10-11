@@ -50,6 +50,13 @@ class TestMaths(TestCase):
     def test_mean(self):
         self.assertEqual(np.mean([1, 2, 3, 4]), 2.5)
 
+    def test_multipy(self):
+        x = np.array([[3, 6, 7], [5, -3, 0]])
+        y = np.array([[1, 1], [2, 1], [3, -3]])
+        z = x.dot(y)
+        res = np.array([[36, -12], [-1, 2]])
+        self.assertTrue(np.array_equal(z, res))
+
     def test_reject_outliers(self):
         m = 2
         data = [2,4,5,1,6,5,40]
