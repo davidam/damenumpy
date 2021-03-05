@@ -3,8 +3,8 @@
 
 # Copyright (C) 2019  David Arroyo Menéndez
 
-# Author: David Arroyo Menéndez <davidam@gnu.org>
-# Maintainer: David Arroyo Menéndez <davidam@gnu.org>
+# Author: David Arroyo Menéndez <davidam@gmail.com>
+# Maintainer: David Arroyo Menéndez <davidam@gmail.com>
 
 # This file is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -33,7 +33,7 @@ with open(path.join(this_directory, 'README.md')) as f:
     long_description = f.read()
 
 setup(name='damenumpy',
-      version='0.0.9',
+      version='0.0.10',
       description='Learning Numpy from Tests by David Arroyo Menéndez',
       long_description=long_description,
       classifiers=[
@@ -46,7 +46,7 @@ setup(name='damenumpy',
       scripts=['bin/damenumpy-sum.py'],
       url='http://github.com/davidam/damenumpy',
       author='David Arroyo Menéndez',
-      author_email='davidam@gnu.org',
+      author_email='davidam@gmail.com',
       license='GPLv3',
       packages=['damenumpy', 'damenumpy.tests'],
       package_dir={'damenumpy': 'damenumpy', 'damenumpy.tests': 'damenumpy/tests', 'damenumpy.bin': 'damenumpy/bin'},
