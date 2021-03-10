@@ -28,3 +28,5 @@ then
 else
     echo "sum test is ok"
 fi
+
+rm files/tests/sum-*txt
