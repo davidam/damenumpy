@@ -23,8 +23,10 @@
 
 import numpy as np
 
+
 def main():
-    x = np.array([[1,2],[3,4]])
+    x = np.array([[1, 2], [3, 4]])
     return np.sum(x)
+
 
 print(main())
