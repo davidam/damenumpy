@@ -25,6 +25,7 @@ from unittest import TestCase
 
 import numpy as np
 
+
 class TestDatatypes(TestCase):
     def test_dtype(self):
         x = np.array([1, 2])
@@ -33,11 +34,14 @@ class TestDatatypes(TestCase):
         self.assertEqual(y.dtype, "float64")
 
     def test_bool(self):
-        a = np.array([[1,2], [3, 4], [5, 6]])
+        a = np.array([[1, 2], [3, 4], [5, 6]])
         bool_idx = (a > 2)
-        self.assertTrue(np.array_equal(a[a > 2], np.array([3, 4, 5, 6])))
-        self.assertTrue(np.array_equal(a[bool_idx], np.array([3, 4, 5, 6])))
-        self.assertTrue(np.array_equal(bool_idx, np.array([[False, False], [True, True], [True, True]])))
+        arr1 = np.array([3, 4, 5, 6])
+        self.assertTrue(np.array_equal(a[a > 2], arr1))
+        arr2 = np.array([3, 4, 5, 6])
+        self.assertTrue(np.array_equal(a[bool_idx], arr2))
+        arr3 = np.array([[False, False], [True, True], [True, True]])
+        self.assertTrue(np.array_equal(bool_idx, arr3))
 
 # Elementwise sum; both produce the array
 # [[ 6.0  8.0]
