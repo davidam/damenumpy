@@ -24,9 +24,10 @@
 from unittest import TestCase
 import numpy as np
 
+
 class TestMaths(TestCase):
     def test_sum(self):
-        x = np.array([[1,2],[3,4]])
+        x = np.array([[1, 2], [3, 4]])
         x2 = np.array([4, 6])
         x3 = np.array([4, 6])
         self.assertEqual(np.sum(x), 10)
@@ -59,39 +60,42 @@ class TestMaths(TestCase):
 
     def test_reject_outliers(self):
         m = 2
-        data = [2,4,5,1,6,5,40]
+        data = [2, 4, 5, 1, 6, 5, 40]
         u = np.mean(data)
         s = np.std(data)
         filtered = [e for e in data if (u - 2 * s < e < u + 2 * s)]
         self.assertEqual([2, 4, 5, 1, 6, 5], filtered)
 
     def test_dot(self):
-        v = np.array([9,10])
+        v = np.array([9, 10])
         w = np.array([11, 12])
         # Inner product of vectors; both produce 219
         self.assertEqual(np.dot(v, w), 219)
 
     def test_linspace(self):
         x = np.linspace(0, 10, num=11, endpoint=True)
-        self.assertTrue(np.array_equal(x, np.array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10])))
+        arr1 = np.array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+        self.assertTrue(np.array_equal(x, arr1))
         y = np.linspace(0, 10, num=3, endpoint=True)
         self.assertTrue(np.array_equal(y, np.array([0, 5, 10])))
 
     def test_linalg(self):
         a = np.array([[1.0, 2.0], [3.0, 4.0]])
         y = np.array([[5.], [7.]])
-        res = np.linalg.solve(a,y)
+        res = np.linalg.solve(a, y)
         self.assertTrue(np.array_equal(res, np.array([[-3.0], [4.0]])))
 
     def test_bincount(self):
         a = np.array([1, 1, 2])
         counts1 = np.bincount(a)
         self.assertTrue(np.array_equal(counts1, np.array([0, 2, 1])))
-        b = np.array([1,2,3,1,2,1,1,1,3,2,2,1,7,7,7,7,7,7,7,7,7,7,7,7,7])
+        b = np.array([1, 2, 3, 1, 2, 1, 1, 1, 3, 2, 2, 1, 7, 7,
+                      7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7])
         counts2 = np.bincount(b)
-        self.assertTrue(np.array_equal(counts2, np.array([0, 6, 4, 2, 0, 0, 0, 13])))
+        arr1 = np.array([0, 6, 4, 2, 0, 0, 0, 13])
+        self.assertTrue(np.array_equal(counts2, arr1))
 
-    def test_argmax(self): # moda
-        arr = np.array([1,2,3,1,2,1,1,1])
+    def test_argmax(self):  # moda
+        arr = np.array([1, 2, 3, 1, 2, 1, 1, 1])
         m = np.argmax(arr)
         self.assertTrue(1, m)
