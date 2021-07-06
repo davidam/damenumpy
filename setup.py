@@ -17,7 +17,7 @@
 # GNU General Public License for more details.
 
 # You should have received a copy of the GNU General Public License
-# along with GNU Emacs; see the file COPYING.  If not, write to
+# along with DameNumpy; see the file COPYING.  If not, write to
 # the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
 # Boston, MA 02110-1301 USA,
 
@@ -33,7 +33,7 @@ with open(path.join(this_directory, 'README.md')) as f:
     long_description = f.read()
 
 setup(name='damenumpy',
-      version='0.0.10',
+      version='0.0.11',
       description='Learning Numpy from Tests by David Arroyo Menéndez',
       long_description=long_description,
       classifiers=[
@@ -43,21 +43,20 @@ setup(name='damenumpy',
         'Topic :: Scientific/Engineering',
       ],
       keywords='numpy tests',
-      scripts=['bin/damenumpy-sum.py'],
+      scripts=['damenumpy/bin/damenumpy-sum.py'],
       url='http://github.com/davidam/damenumpy',
       author='David Arroyo Menéndez',
       author_email='davidam@gmail.com',
       license='GPLv3',
       packages=['damenumpy', 'damenumpy.tests'],
-      package_dir={'damenumpy': 'damenumpy', 'damenumpy.tests': 'damenumpy/tests', 'damenumpy.bin': 'damenumpy/bin'},
+      package_dir={'damenumpy': 'damenumpy',
+                   'damenumpy.tests': 'damenumpy/tests',
+                   'damenumpy.bin': 'damenumpy/bin'},
       install_requires=[
           'markdown',
           'numpy',
       ],
       test_suite='nose.collector',
       tests_require=['nose', 'nose-cover3'],
-      entry_points={
-          'console_scripts': ['damenumpy=damenumpy'],
-      },
       include_package_data=True,
       zip_safe=False)
