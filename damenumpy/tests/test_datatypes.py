@@ -29,7 +29,8 @@ import numpy as np
 class TestDatatypes(TestCase):
     def test_dtype(self):
         x = np.array([1, 2])
-        self.assertEqual(x.dtype, "int64")
+        bool1 = (x.dtype == "int64") or (x.dtype == "int32")
+        self.assertTrue(bool1)
         y = np.array([1.0, 2.0])
         self.assertEqual(y.dtype, "float64")
 
