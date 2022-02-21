@@ -20,7 +20,7 @@
 # the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
 # Boston, MA 02110-1301 USA,
 
-python3 bin/damenumpy-sum.py > files/tests/sum-$(date "+%Y-%m-%d-%H").txt 
+python3 damenumpy/bin/damenumpy-sum.py > files/tests/sum-$(date "+%Y-%m-%d-%H").txt 
 
 if ! cmp files/tests/sum.txt files/tests/sum-$(date "+%Y-%m-%d-%H").txt >/dev/null 2>&1
 then
