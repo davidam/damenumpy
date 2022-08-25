@@ -33,7 +33,7 @@ with open(path.join(this_directory, 'README.md')) as f:
     long_description = f.read()
 
 setup(name='damenumpy',
-      version='0.0.11',
+      version='0.1',
       description='Learning Numpy from Tests by David Arroyo Menéndez',
       long_description=long_description,
       classifiers=[
