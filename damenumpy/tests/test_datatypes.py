@@ -22,8 +22,9 @@
 # Boston, MA 02110-1301 USA,
 
 from unittest import TestCase
-
 import numpy as np
+import collections
+collections.Callable = collections.abc.Callable
 
 
 class TestDatatypes(TestCase):
