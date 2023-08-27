@@ -20,7 +20,7 @@
 # Boston, MA 02110-1301 USA,
 
 #python3 -m unittest discover -s tests
-echo "Choose pytest or nosetests"
+echo "Write test command (ex: nosetests)"
 read test
 
 $test tests
