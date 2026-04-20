@@ -4,32 +4,46 @@ Learning Numpy from Tests by David Arroyo Menéndez
 * Check Test
 + Execute all tests:
 #+BEGIN_SRC
-$ nosetests3 tests
+$ pytest tests
 #+END_SRC
 
 + Execute one file:
 #+BEGIN_SRC
-$ nosetests3 tests/test_basics.py
+$ pytest tests/test_basics.py
 #+END_SRC
 
 + Execute one test:
 #+BEGIN_SRC
-$ nosetests3 tests/test_basics.py:TestBasics.test_indexing
+$ pytest tests/test_basics.py:TestBasics.test_indexing
 #+END_SRC
 
 * Pypi
-+ To install from local: 
-$ pip install -e .
+** You can install from Internet in a python virtual environment to check: 
 
-+ To install create tar.gz in dist directory: 
-$ python3 setup.py register sdist
-
-+ To upload to pypi: 
-$ twine upload dist/damenumpy-0.1.tar.gz
-
-+ You can install from Internet in a python virtual environment to check: 
-$ python3 -m venv /tmp/funny
+#+BEGIN_SRC
+$ mkdir /tmp/funny  
+$ python3.14 -m venv /tmp/funny
 $ cd /tmp/funny
 $ source bin/activate
-$ pip3 install damenumpy
+$ python3.14 -m pip install --upgrade pip  
+$ python3.14 -m pip install damenumpy 
+#+END_SRC
+
+** To install from local: 
+
+#+BEGIN_SRC
+$ pip install -e .
+#+END_SRC
+
+** To install create tar.gz in dist directory: 
+
+#+BEGIN_SRC
+$ python3 -m build
+#+END_SRC
+
+** To upload to pypi: 
+
+#+BEGIN_SRC
+$ twine upload dist/damenumpy-0.1.tar.gz
+#+END_SRC
 

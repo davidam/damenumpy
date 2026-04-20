@@ -1,46 +1,65 @@
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#sec-1">1. Check Test</a></li>
-<li><a href="#sec-2">2. Pypi</a></li>
-</ul>
-</div>
-</div>
+
+# Table of Contents
+
+1.  [Check Test](#org569e0c3)
+2.  [Pypi](#org290af36)
+    1.  [You can install from Internet in a python virtual environment to check:](#org8bb217d)
+    2.  [To install from local:](#orgab790a6)
+    3.  [To install create tar.gz in dist directory:](#org4e104bb)
+    4.  [To upload to pypi:](#orgbb19390)
 
 Learning Numpy from Tests by David Arroyo Menéndez
 
-# Check Test<a id="sec-1" name="sec-1"></a>
+
+<a id="org569e0c3"></a>
+
+# Check Test
 
 -   Execute all tests:
 
-    $ nosetests3 tests
+    $ pytest tests
 
 -   Execute one file:
 
-    $ nosetests3 tests/test_basics.py
+    $ pytest tests/test_basics.py
 
 -   Execute one test:
 
-    $ nosetests3 tests/test_basics.py:TestBasics.test_indexing
+    $ pytest tests/test_basics.py:TestBasics.test_indexing
 
-# Pypi<a id="sec-2" name="sec-2"></a>
 
--   To install from local:
+<a id="org290af36"></a>
 
-$ pip install -e .
+# Pypi
 
--   To install create tar.gz in dist directory:
 
-$ python3 setup.py register sdist
+<a id="org8bb217d"></a>
 
--   To upload to pypi:
+## You can install from Internet in a python virtual environment to check:
 
-$ twine upload dist/damenumpy-0.1.tar.gz
+    $ python3 -m venv /tmp/funny
+    $ cd /tmp/funny
+    $ source bin/activate
+    $ pip3 install damenumpy
 
--   You can install from Internet in a python virtual environment to check:
 
-$ python3 -m venv /tmp/funny
-$ cd /tmp/funny
-$ source bin/activate
-$ pip3 install damenumpy
+<a id="orgab790a6"></a>
+
+## To install from local:
+
+    $ pip install -e .
+
+
+<a id="org4e104bb"></a>
+
+## To install create tar.gz in dist directory:
+
+    $ python3 -m build
+
+
+<a id="orgbb19390"></a>
+
+## To upload to pypi:
+
+    $ twine upload dist/damenumpy-0.1.tar.gz
+
