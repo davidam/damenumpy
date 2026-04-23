@@ -117,6 +117,11 @@ class TestBasics(TestCase):
         x = np.diag([1,2,3])
         arr1 = np.array([[1, 0, 0], [0, 2, 0], [0, 0, 3]])
         self.assertTrue(np.array_equal(x, arr1))
+
+    def test_linspace(self):
+        x = np.linspace(1., 4., 6)
+        arr1 = np.array([1. ,  1.6,  2.2,  2.8,  3.4,  4. ])
+        self.assertTrue(np.array_equal(x, arr1))
         
     def test_bool_array(self):
         a = np.array([[1, 2], [3, 4], [5, 6]])
