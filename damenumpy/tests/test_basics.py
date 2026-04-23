@@ -21,6 +21,9 @@
 # the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
 # Boston, MA 02110-1301 USA,
 
+# This file is about simple exercises with numpy
+# You can read https://numpy.org/doc/stable/user/basics.creation.html
+
 from unittest import TestCase
 import numpy as np
 import collections
@@ -35,6 +38,20 @@ class TestBasics(TestCase):
         self.assertEqual(b[0, 1], 2)
         self.assertEqual(b[1, 0], 4)
 
+    def test_any_all(self):
+        # Create a NumPy array 'arr' containing Boolean values
+        arr = np.array([True, False, True])
+        # Create another NumPy array 'arr2' containing all False values
+        arr2 = np.array([False, False, False])
+        # At least one element in the first array is True
+        self.assertTrue(arr.any())
+        # There not element in the second array valued with True
+        self.assertFalse(arr2.any())
+        # Not all elements in the first array is True
+        self.assertFalse(arr.all())
+        # All elements in the second array is True
+        self.assertFalse(arr.all())
+        
     def test_shape(self):
         b = np.array([[1, 2, 3], [4, 5, 6]])   # Create a rank 2 array
         self.assertEqual((2, 3), b.shape)
@@ -42,8 +59,8 @@ class TestBasics(TestCase):
     def test_sum(self):
         x = np.array([[1, 2], [3, 4]])
         x2 = np.array([4, 6])
-        x3 = np.array([4, 6])
         self.assertEqual(np.sum(x), 10)
+        self.assertEqual(np.sum(x2), 10)
 
     def test_sum_zero(self):
         x = np.zeros((2, 2))
