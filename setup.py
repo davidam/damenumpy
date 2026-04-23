@@ -22,18 +22,14 @@
 # Boston, MA 02110-1301 USA,
 
 from setuptools import setup
-from os import path
-
-# def readme():
-#     with open('README.org') as f:
-#         return f.read()
+from os import path    
 
 this_directory = path.abspath(path.dirname(__file__))
 with open(path.join(this_directory, 'README.md')) as f:
     long_description = f.read()
 
 setup(name='damenumpy',
-      version='0.1.1',
+      version='0.2.1.post3',
       description='Learning Numpy from Tests by David Arroyo Menéndez',
       long_description=long_description,
       classifiers=[
@@ -52,7 +48,7 @@ setup(name='damenumpy',
       package_dir={'damenumpy': 'damenumpy',
                    'damenumpy.tests': 'damenumpy/tests',
                    'damenumpy.bin': 'damenumpy/bin'},
-      data_files=[('damenumpy', ['damenumpy/runtests.sh'])],
+      data_files=[('damenumpy', ['README.org', 'README.md', 'testsbycommands.sh', 'files/tests/sum.txt', 'damenumpy/runtests.sh', 'damenumpy/__init__.py', 'damenumpy/tests/__init__.py', 'damenumpy/bin/__init__.py'])],
       install_requires=[
           'markdown',
           'numpy',
