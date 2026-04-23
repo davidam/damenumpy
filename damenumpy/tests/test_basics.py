@@ -51,6 +51,20 @@ class TestBasics(TestCase):
         self.assertFalse(arr.all())
         # All elements in the second array is True
         self.assertFalse(arr.all())
+
+    def test_logical_values(self):
+        # Create two larger NumPy arrays with Boolean values
+        array1 = np.array([True, False, True, False, True])
+        array2 = np.array([False, True, True, False, False])
+
+        # Calculate the element-wise logical AND between array1 and array2
+        result_and = np.logical_and(array1, array2)  
+        self.assertTrue(np.array_equal(result_and, np.array([False, False, True, False, False])))
+        
+        # Calculate the element-wise logical OR between array1 and array2
+        result_or = np.logical_or(array1, array2)  
+        self.assertTrue(np.array_equal(result_or, np.array([True, True, True, False, True])))
+
         
     def test_shape(self):
         b = np.array([[1, 2, 3], [4, 5, 6]])   # Create a rank 2 array
@@ -89,6 +103,11 @@ class TestBasics(TestCase):
         arr1 = np.array([[1, 0, 0], [0, 1, 0], [0, 0, 1]])
         self.assertTrue(np.array_equal(x, arr1))
 
+    def test_diag(self):
+        x = np.diag([1,2,3])
+        arr1 = np.array([[1, 0, 0], [0, 2, 0], [0, 0, 3]])
+        self.assertTrue(np.array_equal(x, arr1))
+        
     def test_bool_array(self):
         a = np.array([[1, 2], [3, 4], [5, 6]])
         bool_idx = (a > 2)
