@@ -17,7 +17,7 @@ name = "damenumpy"  # Required
 #
 # For a discussion on single-sourcing the version, see
 # https://packaging.python.org/guides/single-sourcing-package-version/
-version = "0.2.1"  # Required
+version = "0.2.1.post3"  # Required
 
 # This is a one-line description or tagline of what your project does. This
 # corresponds to the "Summary" metadata field:
@@ -51,7 +51,7 @@ license = {file = "LICENSE"}
 # Note that this is a list of additional keywords, separated
 # by commas, to be used to assist searching for the distribution in a
 # larger catalog.
-keywords = ["sample", "basics", "control structures", "datastructures", "development"]  # Optional
+keywords = ["numpy", "simple", "exercise"]  # Optional
 
 # This should be your name or the name of the organization who originally
 # authored the project, and a valid email address corresponding to the name
@@ -93,6 +93,7 @@ classifiers = [  # Optional
   "Programming Language :: Python :: 3.9",
   "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.14",  
   "Programming Language :: Python :: 3 :: Only",
 ]
 
@@ -146,7 +147,7 @@ main = "main:main"
 [tool.setuptools]
 # If there are data files included in your packages that need to be
 # installed, specify them here.
-package-data = {"damenumpy" = ['damenumpy/files/tests/sum.txt', 'damenumpy/runtests.sh', 'testsbycommands.sh'] }
+package-data = {"damenumpy" = ['damenumpy/files/tests/sum.txt', 'damenumpy/runtests.sh', 'testsbycommands.sh', 'README.md', 'README.org'] }
 
 [build-system]
 # These are the assumed default build requirements from pip:
