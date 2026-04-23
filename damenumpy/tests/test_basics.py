@@ -39,9 +39,14 @@ class TestBasics(TestCase):
         self.assertEqual(b[1, 0], 4)
 
     def test_arange(self):
+        # first make an array from zero to nine
         a = np.arange(10)
         x = np.array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
         self.assertTrue(np.array_equal(a, x))
+        # second make an array form two to nine using floats
+        b = np.arange(2, 10, dtype=float)
+        y = np.array([2., 3., 4., 5., 6., 7., 8., 9.])
+        self.assertTrue(np.array_equal(b, y))
         
     def test_any_all(self):
         # Create a NumPy array 'arr' containing Boolean values
