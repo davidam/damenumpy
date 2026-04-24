@@ -52,6 +52,9 @@ class TestMaths(TestCase):
 
     def test_mean(self):
         self.assertEqual(np.mean([1, 2, 3, 4]), 2.5)
+        b = np.array([1, 2, 3])  
+        m = b.mean()
+        self.assertEqual(2., m)
 
     def test_multipy(self):
         x = np.array([[3, 6, 7], [5, -3, 0]])
@@ -59,7 +62,10 @@ class TestMaths(TestCase):
         z = x.dot(y)
         res = np.array([[36, -12], [-1, 2]])
         self.assertTrue(np.array_equal(z, res))
-
+        v = np.dot(z, z)
+        w = np.array([[1308, -456], [ -38,   16]])
+        self.assertTrue(np.array_equal(v, w))
+        
     def test_reject_outliers(self):
         m = 2
         data = [2, 4, 5, 1, 6, 5, 40]
@@ -74,6 +80,12 @@ class TestMaths(TestCase):
         # Inner product of vectors; both produce 219
         self.assertEqual(np.dot(v, w), 219)
 
+    def test_inner(self):
+        v = np.array([6, 2])
+        w = np.array([2, 5])
+        # Explanation: np.inner(v, w) multiplies corresponding elements (6*2 + 2*5) and sums them to get 22.
+        self.assertEqual(np.inner(v, w), 22)
+        
     def test_linspace(self):
         x = np.linspace(0, 10, num=11, endpoint=True)
         arr1 = np.array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
