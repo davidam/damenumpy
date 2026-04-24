@@ -45,8 +45,14 @@ class TestDatatypes(TestCase):
         arr3 = np.array([[False, False], [True, True], [True, True]])
         self.assertTrue(np.array_equal(bool_idx, arr3))
 
-# Elementwise sum; both produce the array
-# [[ 6.0  8.0]
-#  [10.0 12.0]]
-# print(x + y)
-# print(np.add(x, y))
+    def test_ndim(self):
+        a = np.array(42)
+        self.assertEqual(a.ndim,0)
+        b = np.array([1, 2, 3, 4, 5])
+        self.assertEqual(b.ndim,1)
+        c = np.array([[1, 2, 3], [4, 5, 6]])
+        self.assertEqual(c.ndim,2)
+        d = np.array([[[1, 2, 3], [4, 5, 6]], [[1, 2, 3], [4, 5, 6]]])
+        self.assertEqual(d.ndim,3)
+        e = np.array([1, 2, 3, 4], ndmin=5)
+        self.assertEqual(e.ndim,5)
