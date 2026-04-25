@@ -113,3 +113,24 @@ class TestMaths(TestCase):
         arr = np.array([1, 2, 3, 1, 2, 1, 1, 1])
         m = np.argmax(arr)
         self.assertTrue(1, m)
+
+    def test_eigen(self): # eigen values and eigen vectors
+        # create numpy 2d-array
+        m = np.array([[1, 2],
+                      [2, 3]])
+        # finding eigenvalues and eigenvectors
+        eigenvalues, eigenvectors = np.linalg.eig(m)
+        a = np.array([-0.23606798, 4.23606798])
+        res0 = round(a[0], 8)
+        res1 = round(eigenvalues[0], 8)
+        self.assertEqual(res0, res1)
+        res0 = round(a[1], 8)
+        res1 = round(eigenvalues[1], 8)
+        self.assertEqual(res0, res1)
+        # b = np.array([[-0.85065081, -0.52573111],
+        #               [ 0.52573111, -0.85065081]])
+        # print(eigenvectors)
+        # print(np.array_equal(b,eigenvectors))
+        # # res0 = round(b[0][0], 8)
+        # # res1 = round(eigenvalues[0], 8)
+        # # self.assertEqual(res0, res1)
