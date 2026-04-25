@@ -28,6 +28,11 @@ collections.Callable = collections.abc.Callable
 
 
 class TestDatatypes(TestCase):
+    def test_type(self):
+        x = np.array([1, 2])
+        y = str(type(x))
+        self.assertEqual("<class 'numpy.ndarray'>", y)
+    
     def test_dtype(self):
         x = np.array([1, 2])
         bool1 = (x.dtype == "int64") or (x.dtype == "int32")
