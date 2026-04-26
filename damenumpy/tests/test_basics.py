@@ -22,7 +22,10 @@
 # Boston, MA 02110-1301 USA,
 
 # This file is about simple exercises with numpy
-# You can read https://numpy.org/doc/stable/user/basics.creation.html
+# You can read external documentation
+# + https://numpy.org
+# + https://www.w3schools.com/python/numpy/numpy_creating_arrays.asp
+# + https://www.geeksforgeeks.org/python/numpy-tutorial/
 
 from unittest import TestCase
 import numpy as np
@@ -156,3 +159,9 @@ class TestBasics(TestCase):
         a = np.array([[1, 2], [3, 4]])
         arr1 = np.array([[1, 3], [2, 4]])
         self.assertTrue(np.array_equal(arr1, a.transpose()))
+
+    def test_array_split(self):
+        arr = np.array([1, 2, 3, 4, 5, 6])
+        res1 = np.array_split(arr, 3)
+        res2 = np.array([[1, 2], [3, 4], [5, 6]])
+        self.assertTrue(np.array_equal(res1, res2))
