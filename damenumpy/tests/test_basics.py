@@ -160,8 +160,21 @@ class TestBasics(TestCase):
         arr1 = np.array([[1, 3], [2, 4]])
         self.assertTrue(np.array_equal(arr1, a.transpose()))
 
-    def test_array_split(self):
+    def test_split(self):
         arr = np.array([1, 2, 3, 4, 5, 6])
         res1 = np.array_split(arr, 3)
         res2 = np.array([[1, 2], [3, 4], [5, 6]])
         self.assertTrue(np.array_equal(res1, res2))
+
+    def test_concatenate(self):
+        arr1 = np.array([[1, 2], [3, 4]])
+        arr2 = np.array([[5, 6], [7, 8]])
+        arr = np.concatenate((arr1, arr2), axis=1)
+        res = np.array([[1, 2, 5, 6], [3, 4, 7, 8]])
+        self.assertTrue(np.array_equal(arr, res))
+
+    def test_where(self):
+        arr = np.array([1, 2, 3, 4, 5, 4, 4])
+        x = np.where(arr == 4)
+        res = np.array([[3, 5, 6],])
+        self.assertTrue(np.array_equal(res, x))
