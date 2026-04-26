@@ -1,17 +1,17 @@
 
 # Table of Contents
 
-1.  [Check Test](#org569e0c3)
-2.  [Pypi](#org290af36)
-    1.  [You can install from Internet in a python virtual environment to check:](#org8bb217d)
-    2.  [To install from local:](#orgab790a6)
-    3.  [To install create tar.gz in dist directory:](#org4e104bb)
-    4.  [To upload to pypi:](#orgbb19390)
+1.  [Check Test](#orgf7e42f0)
+2.  [Pypi](#orge94fd50)
+    1.  [You can install from Internet in a python virtual environment to check:](#org01e63af)
+    2.  [To install from local:](#org6fb219a)
+    3.  [To install create tar.gz in dist directory:](#orga3f9d4d)
+    4.  [To upload to pypi:](#orgddd2aeb)
 
 Learning Numpy from Tests by David Arroyo Menéndez
 
 
-<a id="org569e0c3"></a>
+<a id="orgf7e42f0"></a>
 
 # Check Test
 
@@ -25,39 +25,41 @@ Learning Numpy from Tests by David Arroyo Menéndez
 
 -   Execute one test:
 
-    $ pytest tests/test_basics.py:TestBasics.test_indexing
+    $ pytest tests/test_basics.py::TestBasics::test_arange
 
 
-<a id="org290af36"></a>
+<a id="orge94fd50"></a>
 
 # Pypi
 
 
-<a id="org8bb217d"></a>
+<a id="org01e63af"></a>
 
 ## You can install from Internet in a python virtual environment to check:
 
-    $ python3 -m venv /tmp/funny
+    $ mkdir /tmp/funny  
+    $ python3.14 -m venv /tmp/funny
     $ cd /tmp/funny
     $ source bin/activate
-    $ pip3 install damenumpy
+    $ python3.14 -m pip install --upgrade pip  
+    $ python3.14 -m pip install damenumpy 
 
 
-<a id="orgab790a6"></a>
+<a id="org6fb219a"></a>
 
 ## To install from local:
 
     $ pip install -e .
 
 
-<a id="org4e104bb"></a>
+<a id="orga3f9d4d"></a>
 
 ## To install create tar.gz in dist directory:
 
     $ python3 -m build
 
 
-<a id="orgbb19390"></a>
+<a id="orgddd2aeb"></a>
 
 ## To upload to pypi:
 
