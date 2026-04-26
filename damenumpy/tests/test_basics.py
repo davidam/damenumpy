@@ -178,3 +178,8 @@ class TestBasics(TestCase):
         x = np.where(arr == 4)
         res = np.array([[3, 5, 6],])
         self.assertTrue(np.array_equal(res, x))
+
+        arr = np.array([10, 14, 93, 41, 8, 7])
+        x = np.where(arr%2 == 0)
+        res = np.array([[0, 1, 4],])
+        self.assertTrue(np.array_equal(res, x))        
