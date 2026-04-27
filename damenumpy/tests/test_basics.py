@@ -36,11 +36,31 @@ collections.Callable = collections.abc.Callable
 class TestBasics(TestCase):
 
     def test_indexing(self):
-        b = np.array([[1, 2, 3], [4, 5, 6]])   # Create a rank 2 array
-        self.assertEqual(b[0, 0], 1)
-        self.assertEqual(b[0, 1], 2)
-        self.assertEqual(b[1, 0], 4)
+        arr1 = np.array([[1, 2, 3], [4, 5, 6]])   # Create a rank 2 array
+        self.assertEqual(arr1[0, 0], 1)
+        self.assertEqual(arr1[0, 1], 2)
+        self.assertEqual(arr1[1, 0], 4)
 
+    def test_indexing_2d(self):
+        arr1 = np.array([[10, 20, 30], [40, 5, 66], [70, 88, 94]])  # Create an array
+        arr2 = arr1[[0,2]]
+        res = np.array([[10, 20, 30], [70, 88, 94]])  # Create an array
+        self.assertTrue(np.array_equal(arr2, res))
+        
+        arr3 = np.array([[101, 20, 3, 10], [40, 5, 66, 7], [70, 88, 9, 141]])
+        arr4 = arr3[1]
+        res = np.array([40, 5, 66, 7])
+        self.assertTrue(np.array_equal(arr4, res))
+
+        arr5 = np.array([[12, 15, 18], 
+                         [25, 30, 35], 
+                         [40, 45, 50]])
+        arr6 = arr[:2, :2] # first 2 rows, first 2 columns
+        res = np.array([[12, 15],
+                        [25, 30]])
+        self.assertTrue(np.array_equal(arr6, res))
+
+        
     def test_arange(self):
         # first make an array from zero to nine
         a = np.arange(10)
@@ -160,7 +180,7 @@ class TestBasics(TestCase):
         arr1 = np.array([[1, 3], [2, 4]])
         self.assertTrue(np.array_equal(arr1, a.transpose()))
 
-    def test_split(self):
+    def test_array_split(self):
         arr = np.array([1, 2, 3, 4, 5, 6])
         res1 = np.array_split(arr, 3)
         res2 = np.array([[1, 2], [3, 4], [5, 6]])
@@ -182,4 +202,4 @@ class TestBasics(TestCase):
         arr = np.array([10, 14, 93, 41, 8, 7])
         x = np.where(arr%2 == 0)
         res = np.array([[0, 1, 4],])
-        self.assertTrue(np.array_equal(res, x))        
+        self.assertTrue(np.array_equal(res, x))     
