@@ -55,7 +55,7 @@ class TestBasics(TestCase):
         arr5 = np.array([[12, 15, 18], 
                          [25, 30, 35], 
                          [40, 45, 50]])
-        arr6 = arr[:2, :2] # first 2 rows, first 2 columns
+        arr6 = arr5[:2, :2] # first 2 rows, first 2 columns
         res = np.array([[12, 15],
                         [25, 30]])
         self.assertTrue(np.array_equal(arr6, res))
