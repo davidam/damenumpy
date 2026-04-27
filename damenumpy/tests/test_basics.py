@@ -71,7 +71,17 @@ class TestBasics(TestCase):
         res = np.array([[[30, 45, 55]],
                         [[70, 85, 10]]])
         self.assertTrue(np.array_equal(arr2, res))
-                         
+        
+        arr3 = np.array([[[10, 25, 70], [30, 45, 55], [20, 45, 7]], 
+                         [[50, 65, 8], [70, 85, 10], [11, 22, 33]],
+                         [[19, 69, 36], [1, 5, 24], [4, 20, 96]]])
+        arr4 = arr3[:,[0, 2]] # Accessing the First and Last rows of 3D NumPy array
+        res =  np.array([[[10, 25, 70], [20, 45, 7]],
+                         [[50, 65, 8], [11, 22, 33]],
+                         [[19, 69, 36], [4, 20, 96]]])
+        self.assertTrue(np.array_equal(arr4, res))
+
+        
         
     def test_arange(self):
         # first make an array from zero to nine
