@@ -217,9 +217,15 @@ class TestBasics(TestCase):
 
     def test_where(self):
         arr = np.array([1, 2, 3, 4, 5, 4, 4])
-        x = np.where(arr == 4)
-        res = np.array([[3, 5, 6],])
+        x = np.where(arr == 4) 
+        res = np.array([[3, 5, 6],]) # the positions 3, 5, 6 are the number 4
         self.assertTrue(np.array_equal(res, x))
+        y = np.where(arr == 5) # the position 5 is the number 4
+        res = np.array([[4]])
+        self.assertTrue(np.array_equal(res, y))
+        z = np.where(arr >= 3)
+        res = np.array([[2, 3, 4, 5, 6]])
+        self.assertTrue(np.array_equal(res, z))
 
         arr = np.array([10, 14, 93, 41, 8, 7])
         x = np.where(arr%2 == 0)
