@@ -57,6 +57,11 @@ class TestMaths(TestCase):
         self.assertEqual(2., m)
 
     def test_multipy(self):
+        a = [[1, 2], [2, 3]]
+        b = [[4, 5], [6, 7]]
+        c = np.dot(a,b)
+        res = np.array([[16, 19], [26, 31]])
+        self.assertTrue(np.array_equal(res, c))
         x = np.array([[3, 6, 7], [5, -3, 0]])
         y = np.array([[1, 1], [2, 1], [3, -3]])
         z = x.dot(y)
