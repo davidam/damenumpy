@@ -76,3 +76,25 @@ class TestDatatypes(TestCase):
         b = arr2.shape
         res = (1, 1, 1, 1, 4)
         self.assertEqual(b, res)
+
+    def test_reshape(self):
+        arr = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])
+        # Reshape From 1-D to 2-D
+        newarr = arr.reshape(4, 3)
+        res = np.array([[1, 2, 3],
+                        [4, 5, 6],
+                        [7, 8, 9],
+                        [10, 11, 12]])
+        self.assertTrue(np.array_equal(newarr, res))
+        
+        # Reshape From 1-D to 3-D
+        newarr = arr.reshape(2, 3, 2)
+        res = np.array([[[1, 2], [3, 4], [5, 6]],
+                        [[7, 8], [9, 10], [11, 12]]])
+        self.assertTrue(np.array_equal(newarr, res))
+
+        # Reshape reducing 1 dimension
+        arr = np.array([[1, 2, 3], [4, 5, 6]])
+        newarr = arr.reshape(-1)
+        res = np.array([1, 2, 3, 4, 5, 6])
+        self.assertTrue(np.array_equal(newarr, res))
