@@ -40,6 +40,7 @@ class TestDatatypes(TestCase):
         y = np.array([1.0, 2.0])
         self.assertEqual(y.dtype, "float64")
 
+        
     def test_bool(self):
         a = np.array([[1, 2], [3, 4], [5, 6]])
         bool_idx = (a > 2)
@@ -61,3 +62,17 @@ class TestDatatypes(TestCase):
         self.assertEqual(d.ndim,3)
         e = np.array([1, 2, 3, 4], ndmin=5)
         self.assertEqual(e.ndim,5)
+
+    def test_shape(self):
+        arr = np.array([[1, 2, 3, 4], [5, 6, 7, 8]])
+        res = (2, 4)
+        a = arr.shape
+        self.assertEqual(a, res)
+
+        arr2 = np.array([1, 2, 3, 4], ndmin=5)
+        arr3 = np.array([[[[[1, 2, 3, 4]]]]])
+        self.assertTrue(np.array_equal(arr2, arr3))
+
+        b = arr2.shape
+        res = (1, 1, 1, 1, 4)
+        self.assertEqual(b, res)
