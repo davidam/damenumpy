@@ -231,3 +231,19 @@ class TestBasics(TestCase):
         x = np.where(arr%2 == 0)
         res = np.array([[0, 1, 4],])
         self.assertTrue(np.array_equal(res, x))     
+
+    def test_slicing_arrays(self):
+        arr = np.array([1, 2, 3, 4, 5, 6, 7])
+        a = arr[1:5]
+        res1 = np.array([2,3,4,5])
+        self.assertTrue(np.array_equal(a, res1))
+        b = arr[4:]
+        res2 = np.array([5,6,7])
+        self.assertTrue(np.array_equal(b,res2))
+        c = arr[1:-1]
+        res3 = np.array([2,3,4,5,6])
+        self.assertTrue(np.array_equal(c,res3))
+        d = arr[-3:-1]
+        print(d)        
+        res4 = np.array([5, 6])
+        self.assertTrue(np.array_equal(d,res4))
