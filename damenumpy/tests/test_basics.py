@@ -247,3 +247,11 @@ class TestBasics(TestCase):
         print(d)        
         res4 = np.array([5, 6])
         self.assertTrue(np.array_equal(d,res4))
+        e = arr[::2]
+        res5 = np.array([1,3,5,7])
+        self.assertTrue(np.array_equal(e,res5))
+        f = arr[::3]
+        res6 = np.array([1,4,7])
+        self.assertTrue(np.array_equal(f,res6))
+
+        
