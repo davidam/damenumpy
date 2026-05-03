@@ -255,3 +255,16 @@ class TestBasics(TestCase):
         self.assertTrue(np.array_equal(f,res6))
 
         
+    def test_slicing_arrays_2d(self):
+        arr = np.array([[1, 2, 3, 4, 5], [6, 7, 8, 9, 10]])
+        a = arr[1, 1:4]
+        print(a)
+        res1 = np.array([7,8,9])
+        self.assertTrue(np.array_equal(a, res1))
+        b = arr[0:2, 2]
+        res2 = np.array([3,8])
+        self.assertTrue(np.array_equal(b, res2))
+        c = arr[0:2, 1:4]
+        print(c)
+        res3 = np.array([[2,3,4],[7,8,9]])
+        self.assertTrue(np.array_equal(c, res3))
