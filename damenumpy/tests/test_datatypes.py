@@ -98,3 +98,10 @@ class TestDatatypes(TestCase):
         newarr = arr.reshape(-1)
         res = np.array([1, 2, 3, 4, 5, 6])
         self.assertTrue(np.array_equal(newarr, res))
+
+    def test_astype(self):
+        arr = np.array([1.1, 2.1, 3.1])
+        newarr = arr.astype('i')
+        res = np.array([1, 2, 3]) 
+        self.assertTrue(np.array_equal(newarr, res))
+        self.assertTrue(newarr.dtype, "int32")
