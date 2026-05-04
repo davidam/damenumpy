@@ -39,7 +39,6 @@ class TestDatatypes(TestCase):
         self.assertTrue(bool1)
         y = np.array([1.0, 2.0])
         self.assertEqual(y.dtype, "float64")
-
         
     def test_bool(self):
         a = np.array([[1, 2], [3, 4], [5, 6]])
@@ -51,6 +50,18 @@ class TestDatatypes(TestCase):
         arr3 = np.array([[False, False], [True, True], [True, True]])
         self.assertTrue(np.array_equal(bool_idx, arr3))
 
+    def test_copy_versus_views(self):
+        arr = np.array([1, 2, 3, 4, 5])
+        x = arr.copy()
+        self.assertTrue(np.array_equal(arr,x))
+        arr[0] = 42
+        self.assertFalse(np.array_equal(arr,x))
+        arr = np.array([1, 2, 3, 4, 5])
+        x = arr.view()
+        self.assertTrue(np.array_equal(arr,x))        
+        arr[0] = 42
+        self.assertTrue(np.array_equal(arr,x))
+        
     def test_ndim(self):
         a = np.array(42)
         self.assertEqual(a.ndim,0)
