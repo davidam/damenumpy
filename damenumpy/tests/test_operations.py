@@ -53,3 +53,17 @@ class TestOperations(TestCase):
                 string2 = string2 + str(y)
         res2 = "123456"
         self.assertEqual(string2, res2)
+
+    def test_iterating_3d(self):    
+        arr = np.array([[[1, 2, 3], [4, 5, 6]], [[7, 8, 9], [10, 11, 12]]])
+        string1 = ""
+        for x in arr:
+            for y in x:
+                for z in y:
+                    string1 = string1 + str(z) + " "
+        res1 = "1 2 3 4 5 6 7 8 9 10 11 12 "
+        self.assertEqual(string1, res1)
+        string2 = ""
+        for x in np.nditer(arr):
+            string2 = string2 + str(x) + " "
+        self.assertEqual(string2, res1)
