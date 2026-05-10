@@ -116,3 +116,10 @@ class TestDatatypes(TestCase):
         res = np.array([1, 2, 3]) 
         self.assertTrue(np.array_equal(newarr, res))
         self.assertTrue(newarr.dtype, "int32")
+
+    def test_csv(self):
+        arr = np.loadtxt("files/CAR.csv",
+			 delimiter=",", dtype=str)
+        x = str(arr.shape)
+        res = "(4341, 8)"
+        self.assertEqual(x, res)
