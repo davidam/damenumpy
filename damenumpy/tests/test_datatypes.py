@@ -118,8 +118,16 @@ class TestDatatypes(TestCase):
         self.assertTrue(newarr.dtype, "int32")
 
     def test_csv(self):
+        # The loadtxt() method is faster and simpler for reading CSV files.
+        # It is best when the file has consistent columns and no missing values
         arr = np.loadtxt("files/CAR.csv",
 			 delimiter=",", dtype=str)
+        x = str(arr.shape)
+        res = "(4341, 8)"
+        self.assertEqual(x, res)
+        # The genfromtxt() function is used to handle datasets with missing
+        # values or varied data types.
+        arr = np.genfromtxt("files/CAR.csv",delimiter=",", dtype=str)
         x = str(arr.shape)
         res = "(4341, 8)"
         self.assertEqual(x, res)
