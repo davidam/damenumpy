@@ -56,6 +56,12 @@ class TestMaths(TestCase):
         m = b.mean()
         self.assertEqual(2., m)
 
+    def test_cumsum(self):
+        array = np.array([1, 2, 3, 4, 5])
+        cumulative_sum = np.cumsum(array)
+        res = np.array([1, 3, 6, 10, 15])
+        self.assertTrue(np.array_equal(cumulative_sum, res))
+        
     def test_multipy(self):
         a = [[1, 2], [2, 3]]
         b = [[4, 5], [6, 7]]
@@ -139,3 +145,4 @@ class TestMaths(TestCase):
         # # res0 = round(b[0][0], 8)
         # # res1 = round(eigenvalues[0], 8)
         # # self.assertEqual(res0, res1)
+
