@@ -268,3 +268,9 @@ class TestBasics(TestCase):
         print(c)
         res3 = np.array([[2,3,4],[7,8,9]])
         self.assertTrue(np.array_equal(c, res3))
+
+
+    def test_ogrid(self):
+        arr1 = np.ogrid[-1:1:5j]
+        res1 = np.array([-1.,  -0.5,  0.,   0.5,  1. ])
+        self.assertTrue(np.array_equal(arr1, res1))
