@@ -29,7 +29,7 @@ with open(path.join(this_directory, 'README.md')) as f:
     long_description = f.read()
 
 setup(name='damenumpy',
-      version='0.2.1.post3',
+      version='0.2.3.post1',
       description='Learning Numpy from Tests by David Arroyo Menéndez',
       long_description=long_description,
       classifiers=[
@@ -48,7 +48,7 @@ setup(name='damenumpy',
       package_dir={'damenumpy': 'damenumpy',
                    'damenumpy.tests': 'damenumpy/tests',
                    'damenumpy.bin': 'damenumpy/bin'},
-      data_files=[('damenumpy', ['README.org', 'README.md', 'testsbycommands.sh', 'files/tests/sum.txt', 'damenumpy/runtests.sh', 'damenumpy/__init__.py', 'damenumpy/tests/__init__.py', 'damenumpy/bin/__init__.py'])],
+      data_files=[('damenumpy', ['README.org', 'README.md', 'testsbycommands.sh', 'files/tests/sum.txt', 'damenumpy/runtests.sh', 'damenumpy/__init__.py', 'damenumpy/tests/__init__.py', 'damenumpy/bin/__init__.py', 'damenumpy/files/CAR.csv'])],
       install_requires=[
           'markdown',
           'numpy',
