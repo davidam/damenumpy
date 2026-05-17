@@ -130,7 +130,16 @@ class TestBasics(TestCase):
         x2 = np.array([4, 6])
         self.assertEqual(np.sum(x), 10)
         self.assertEqual(np.sum(x2), 10)
+        x = np.array([1, 2, 3])
+        y = np.array([1, 2, 3])
+        z1 = np.sum([x,y])
+        self.assertEqual(z1, 12)
+        z2 = np.sum([x,y], axis=0)
+        self.assertTrue(np.array_equal(z2, np.array([2, 4, 6])))
+        z3 = np.sum([x,y], axis=1)
+        self.assertTrue(np.array_equal(z3, np.array([6, 6])))
 
+        
     def test_sum_zero(self):
         x = np.zeros((2, 2))
         res = np.sum(x)
