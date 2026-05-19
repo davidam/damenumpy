@@ -60,7 +60,7 @@ class TestMaths(TestCase):
         array = np.array([1, 2, 3, 4, 5])
         cumulative_sum = np.cumsum(array)
         res = np.array([1, 3, 6, 10, 15])
-        self.assertTrue(np.array_equal(cumulative_sum, res))
+        self.assertTrue(np.array_equal(cumulative_sum, res))    
         
     def test_multipy(self):
         a = [[1, 2], [2, 3]]
@@ -76,6 +76,22 @@ class TestMaths(TestCase):
         v = np.dot(z, z)
         w = np.array([[1308, -456], [ -38,   16]])
         self.assertTrue(np.array_equal(v, w))
+
+    def test_matmul(self):
+        # Given two matrices, obtain the dot product.
+
+        A = np.array([[1, 2], 
+                      [3, 4]])
+        B = np.array([[5, 6], 
+                      [7, 8]])
+
+        # Producto matricial usando matmul
+        resultado1 = np.matmul(A, B)
+
+        # Producto matricial usando el operador @
+        resultado2 = A @ B
+
+        self.assertTrue(np.array_equal(resultado1, resultado2))
         
     def test_reject_outliers(self):
         m = 2
