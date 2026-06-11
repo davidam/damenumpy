@@ -283,3 +283,27 @@ class TestBasics(TestCase):
         arr1 = np.ogrid[-1:1:5j]
         res1 = np.array([-1.,  -0.5,  0.,   0.5,  1. ])
         self.assertTrue(np.array_equal(arr1, res1))
+
+    def test_filter(self):
+        arr = np.array([41, 42, 43, 44])
+        x = arr[[True, False, True, False]]
+        res = np.array([41, 43])
+        self.assertTrue(np.array_equal(x, res))
+
+    def test_filter2(self):
+        arr = np.array([41, 42, 43, 44])
+
+        # Create an empty list
+        filter_arr = []
+
+        # go through each element in arr
+        for element in arr:
+            # if the element is higher than 42, set the value to True, otherwise False:
+            if element > 42:
+                filter_arr.append(True)
+            else:
+                filter_arr.append(False)
+        newarr = arr[filter_arr]        
+        res = [43, 44]
+        self.assertTrue(np.array_equal(newarr, res))
+        
